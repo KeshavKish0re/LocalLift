@@ -6,8 +6,8 @@ body {
 
 /* LOGO */
 .logo-img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -63,20 +63,28 @@ body {
 
 /* ABOUT US SECTION */
 .about-section {
-    background: #f8f9fa;
-    /* subtle light background */
+    background: #f9fafb;
+    /* subtle professional background */
+}
+
+.about-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+    /* accent color */
+    letter-spacing: 1px;
 }
 
 .about-section .lead {
     font-size: 1.1rem;
-    color: #333;
+    color: #444;
 }
 
 .about-card {
-    background: white;
-    border-left: 4px solid #0d6efd;
-    /* accent color */
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    border-left: 5px solid #0d6efd;
+    /* accent color for professional look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
@@ -87,7 +95,7 @@ body {
 .about-card h5 {
     font-weight: 600;
     color: #0d6efd;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -95,10 +103,7 @@ body {
 
 .about-card p {
     color: #555;
-}
-
-.hero-btn:hover {
-    transform: scale(1.05);
+    line-height: 1.6;
 }
 
 /* TITLES */
