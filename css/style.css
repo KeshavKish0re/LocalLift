@@ -21,6 +21,18 @@ body {
     color: #ffc107 !important;
 }
 
+/* Navbar link size */
+.navbar .nav-link {
+    font-size: 1.2rem; /* increase from default */
+    font-weight: 500;  /* make it a bit bolder */
+    padding: 0.75rem 1rem; /* optional: increase clickable area */
+}
+
+/* Optional: increase spacing between links */
+.navbar-nav .nav-item + .nav-item {
+    margin-left: 1rem;
+}
+
 /* HERO */
 .hero {
     height: 100vh;
