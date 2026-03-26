@@ -6,8 +6,8 @@ body {
 
 /* LOGO */
 .logo-img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -59,6 +59,42 @@ body {
     font-weight: 600;
     padding: 0.8rem 2rem;
     transition: all 0.3s ease;
+}
+
+/* ABOUT US SECTION */
+.about-section {
+    background: #f8f9fa;
+    /* subtle light background */
+}
+
+.about-section .lead {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.about-card {
+    background: white;
+    border-left: 4px solid #0d6efd;
+    /* accent color */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h5 {
+    font-weight: 600;
+    color: #0d6efd;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about-card p {
+    color: #555;
 }
 
 .hero-btn:hover {
