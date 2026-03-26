@@ -6,8 +6,8 @@ body {
 
 /* LOGO */
 .logo-img {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -15,6 +15,11 @@ body {
 /* NAVBAR */
 .custom-navbar {
     background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+}
+
+body {
+    padding-top: 100px;
+    /* top bar + navbar height */
 }
 
 /* Navbar link style */
