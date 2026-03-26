@@ -1,187 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>LocalLift Technologies</title>
+    <title>LocalLift Technologies</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ FIXED PATH -->
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-<div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
 
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-    
-    <img src="./images/logo.png" alt="LLT Logo" width="40" height="40" class="rounded-circle">
+                <!-- ✅ BIGGER LOGO -->
+                <img src="./images/logo.png" alt="LLT Logo" class="logo-img">
 
-    <span class="fw-bold fs-4">LocalLift Technologies</span>
+                <span class="fw-bold fs-4">LocalLift Technologies</span>
 
-</a>
+            </a>
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
-<span class="navbar-toggler-icon"></span>
-</button>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div class="collapse navbar-collapse" id="navmenu">
-<ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
 
-<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-<li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
-</ul>
-</div>
+                </ul>
+            </div>
 
-</div>
-</nav>
+        </div>
+    </nav>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container text-center hero-content">
 
-<!-- HERO -->
+            <h1 class="display-3 fw-bold">LocalLift Technologies</h1>
 
-<section class="hero">
+            <h3 class="mt-3">Websites That Grow Your Business</h3>
 
-<div class="container text-center hero-content">
+            <p class="mt-3">
+                Professional websites for gyms, schools and local businesses
+            </p>
 
-<h1 class="display-3 fw-bold">
-LocalLift Technologies
-</h1>
+            <a href="#contact" class="btn btn-warning btn-lg hero-btn mt-4">
+                Get Your Website
+            </a>
 
-<h3 class="mt-3">
-Websites That Grow Your Business
-</h3>
+        </div>
+    </section>
 
-<p class="mt-3">
-Professional websites for gyms, schools and local businesses
-</p>
+    <!-- SERVICES -->
+    <section id="services" class="container py-5">
 
-<a href="#contact" class="btn btn-warning btn-lg hero-btn mt-4">
-Get Your Website
-</a>
+        <h2 class="text-center section-title mb-5">Our Services</h2>
 
-</div>
+        <div class="row g-4">
 
-</section>
+            <div class="col-md-4">
+                <div class="service-card gym">
+                    <div class="overlay">
+                        <h3>Gym Websites</h3>
+                        <p>Membership plans, trainers and online booking.</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-4">
+                <div class="service-card school">
+                    <div class="overlay">
+                        <h3>School Websites</h3>
+                        <p>Admissions, notices, results and communication.</p>
+                    </div>
+                </div>
+            </div>
 
-<!-- SERVICES -->
+            <div class="col-md-4">
+                <div class="service-card business">
+                    <div class="overlay">
+                        <h3>Business Websites</h3>
+                        <p>Professional websites for shops and startups.</p>
+                    </div>
+                </div>
+            </div>
 
-<section id="services" class="container py-5">
+        </div>
+    </section>
 
-<h2 class="text-center section-title mb-5">
-Our Services
-</h2>
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio text-center">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p>Fast, modern and mobile friendly websites for local businesses.</p>
+        </div>
+    </section>
 
-<div class="row g-4">
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="container">
 
-<div class="col-md-4">
+            <h2 class="text-center section-title mb-5">Contact Us</h2>
 
-<div class="service-card gym">
-<div class="overlay">
-<h3>Gym Websites</h3>
-<p>Membership plans, trainers and online booking.</p>
-</div>
-</div>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
 
-</div>
+                    <form class="contact-form">
 
+                        <input class="form-control mb-3" type="text" placeholder="Your Name">
+                        <input class="form-control mb-3" type="email" placeholder="Your Email">
+                        <textarea class="form-control mb-3" rows="4"
+                            placeholder="Tell us about your website"></textarea>
 
-<div class="col-md-4">
+                        <button class="btn btn-dark w-100">
+                            Send Message
+                        </button>
 
-<div class="service-card school">
-<div class="overlay">
-<h3>School Websites</h3>
-<p>Admissions, notices, results and communication.</p>
-</div>
-</div>
+                    </form>
 
-</div>
+                </div>
+            </div>
 
+        </div>
+    </section>
 
-<div class="col-md-4">
+    <!-- FOOTER -->
+    <footer class="footer text-center">
+        <p>© 2026 LocalLift Technologies</p>
+        <p>Building powerful websites for local businesses</p>
+    </footer>
 
-<div class="service-card business">
-<div class="overlay">
-<h3>Business Websites</h3>
-<p>Professional websites for shops and startups.</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PORTFOLIO -->
-
-<section id="portfolio" class="portfolio text-center">
-
-<div class="container">
-
-<h2 class="section-title">Our Work</h2>
-
-<p>Fast, modern and mobile friendly websites for local businesses.</p>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact-section">
-
-<div class="container">
-
-<h2 class="text-center section-title mb-5">
-Contact Us
-</h2>
-
-<div class="row justify-content-center">
-
-<div class="col-lg-5 col-md-7">
-
-<form class="contact-form">
-
-<input class="form-control mb-3" type="text" placeholder="Your Name">
-
-<input class="form-control mb-3" type="email" placeholder="Your Email">
-
-<textarea class="form-control mb-3" rows="4" placeholder="Tell us about your website"></textarea>
-
-<button class="btn btn-dark w-100">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer class="footer text-center">
-
-<p>© 2026 LocalLift Technologies</p>
-<p>Building powerful websites for local businesses</p>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
