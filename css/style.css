@@ -6,8 +6,10 @@ body {
 
 /* LOGO */
 .logo-img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    /* Increased from 60px to 100px */
+    height: 100px;
+    /* Increased from 60px to 100px */
     object-fit: cover;
     border-radius: 50%;
 }
