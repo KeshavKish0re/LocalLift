@@ -1,7 +1,7 @@
 if (localStorage.getItem("admin") !== "true") {
     window.location.replace("admin-login.html");
 }
-const BASE_URL = "https://website-backend-ye9m.onrender.com";
+const BASE_URL = "http://localhost:8080";
 
 let allEnquiries = [];
 let currentStatusFilter = "ALL";

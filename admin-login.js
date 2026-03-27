@@ -1,4 +1,4 @@
-const BASE_URL = "https://website-backend-ye9m.onrender.com";
+const BASE_URL = "http://localhost:8080";
 
 function login() {
     const username = document.getElementById("username").value.trim();
