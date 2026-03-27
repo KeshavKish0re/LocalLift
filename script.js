@@ -43,14 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             });
 
+            // ✅ CHECK IF RESPONSE IS SUCCESS
+            if (!response.ok) {
+                throw new Error("Server error");
+            }
+
             const result = await response.text();
 
             msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
+
+            // ✅ ALERT POPUP (you asked this)
+            alert("✅ Message sent successfully!");
+
             form.reset();
 
         } catch (error) {
             msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
-            console.error(error);
+            console.error("Error:", error);
         }
 
         btn.innerText = "Send Message";
