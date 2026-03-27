@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - LocalLift Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- 🔐 LOGIN PROTECTION -->
+    <script>
+        if (localStorage.getItem("admin") !== "true") {
+            window.location.replace("admin-login.html");
+        }
+    </script>
+
+    <div class="container mt-4">
+
+        <!-- HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>📋 Admin Dashboard</h3>
+            <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- 📊 COUNTERS -->
+        <div class="row text-center mb-4">
+            <div class="col-md-3 mb-2">
+                <div class="card shadow-sm text-white bg-dark p-3">
+                    <h6>Total Leads</h6>
+                    <h3 id="totalCount">0</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="card shadow-sm text-white bg-primary p-3">
+                    <h6>New</h6>
+                    <h3 id="newCount">0</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="card shadow-sm text-dark bg-warning p-3">
+                    <h6>Contacted</h6>
+                    <h3 id="contactedCount">0</h3>
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="card shadow-sm text-white bg-success p-3">
+                    <h6>Enrolled</h6>
+                    <h3 id="enrolledCount">0</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔘 STATUS FILTER BUTTONS -->
+        <div class="mb-3 text-center">
+            <button class="btn btn-secondary btn-sm me-1" onclick="filterStatus('ALL')">All</button>
+            <button class="btn btn-primary btn-sm me-1" onclick="filterStatus('NEW')">New</button>
+            <button class="btn btn-warning btn-sm me-1" onclick="filterStatus('CONTACTED')">Contacted</button>
+            <button class="btn btn-success btn-sm" onclick="filterStatus('ENROLLED')">Enrolled</button>
+        </div>
+
+        <!-- 🔍 SEARCH -->
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by name, email, or message"
+            autocomplete="off">
+
+        <!-- 📋 TABLE -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="enquiryTableBody"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- 🔓 LOGOUT -->
+    <script>
+        function logout() {
+            localStorage.removeItem("admin");
+            window.location.replace("admin-login.html");
+        }
+    </script>
+
+    <!-- ADMIN LOGIC -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
