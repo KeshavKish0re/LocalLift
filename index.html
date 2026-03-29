@@ -197,7 +197,6 @@
             </div>
         </div>
     </section>
-
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -209,20 +208,30 @@
 
                     <form class="contact-form" id="contactForm">
 
+                        <!-- Name -->
                         <input id="name" class="form-control mb-3" type="text" placeholder="Your Name" required>
 
+                        <!-- Email (NEW ✨) -->
+                        <input id="email" class="form-control mb-3" type="email" placeholder="Your Email (Gmail)"
+                            required>
+
+                        <!-- Phone -->
                         <input id="phone" class="form-control mb-3" type="tel" placeholder="Your Phone Number" required>
 
+                        <!-- Location -->
                         <div class="d-flex gap-2 mb-3">
                             <input id="location" class="form-control" type="text" placeholder="Your Location" required>
                             <button type="button" class="btn btn-outline-dark" onclick="getLocation()">📍</button>
                         </div>
 
+                        <!-- Requirement -->
                         <textarea id="requirement" class="form-control mb-3" rows="4"
                             placeholder="Tell us your requirement" required></textarea>
 
+                        <!-- Message -->
                         <div id="formMessage" class="mb-3 text-center"></div>
 
+                        <!-- Submit -->
                         <button type="submit" id="submitBtn" class="btn btn-dark w-100">
                             Send Message
                         </button>
@@ -233,7 +242,6 @@
 
         </div>
     </section>
-
     <!-- ADDRESS -->
     <section id="address" class="address-section py-5 bg-light">
         <div class="container text-center">
