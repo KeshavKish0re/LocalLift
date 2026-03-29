@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const name = document.getElementById("name").value.trim();
         const phone = document.getElementById("phone").value.trim();
-        const email = document.getElementById("email")?.value.trim(); // ✅ NEW
+        const email = document.getElementById("email")?.value.trim() || "";
         const location = document.getElementById("location").value.trim();
         const requirement = document.getElementById("requirement").value.trim();
 
@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Optional email validation
-        if (email && !email.includes("@")) {
-            msg.innerHTML = `<span style="color:red;">⚠ Invalid email</span>`;
+        // 📧 Email validation (only if provided)
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            msg.innerHTML = `<span style="color:red;">⚠ Invalid email format</span>`;
             return;
         }
 
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({
                     name: name,
                     phone: phone,
-                    email: email || "", // ✅ send real email
+                    email: email,              // ✅ real email
                     location: location,
-                    requirement: requirement
+                    message: requirement       // ✅ FIXED (important)
                 })
             });
 
