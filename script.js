@@ -1,96 +1,107 @@
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+// 🚀 Run after page loads
+document.addEventListener("DOMContentLoaded", function () {
 
-        console.log("JS is running 🚀");
+    console.log("JS is running 🚀");
 
     const form = document.getElementById("contactForm");
     const btn = document.getElementById("submitBtn");
     const msg = document.getElementById("formMessage");
 
+    if (!form) {
+        console.error("Form not found ❌");
+        return;
+    }
+
+    // 🧠 Form Submit Handler
     form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+        e.preventDefault(); // 🔥 Stops page refresh
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const location = document.getElementById("location").value.trim();
-    const requirement = document.getElementById("requirement").value.trim();
+        console.log("Form intercepted ✅");
 
-    msg.innerHTML = "";
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const location = document.getElementById("location").value.trim();
+        const requirement = document.getElementById("requirement").value.trim();
 
-    if (!name || !phone || !location || !requirement) {
-        msg.innerHTML = `<span style="color:red;">⚠ Fill all fields</span>`;
-    return;
+        msg.innerHTML = "";
+
+        // 🛡️ Validation
+        if (!name || !phone || !location || !requirement) {
+            msg.innerHTML = `<span style="color:red;">⚠ Fill all fields</span>`;
+            return;
         }
 
-    btn.innerText = "Sending...";
-    btn.disabled = true;
+        btn.innerText = "Sending...";
+        btn.disabled = true;
 
-    try {
+        try {
             const response = await fetch("http://localhost:8080/api/contact", {
-        method: "POST",
-    headers: {
-        "Content-Type": "application/json"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-    body: JSON.stringify({
-        name: name,
-    phone: phone,
-    location: location,
-    requirement: requirement
+                body: JSON.stringify({
+                    name,
+                    phone,
+                    location,
+                    requirement
                 })
             });
 
-    if (!response.ok) {
+            if (!response.ok) {
                 throw new Error("Server error");
             }
 
-    const result = await response.text();
+            const result = await response.text();
 
-    msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
-    alert("✅ Message sent successfully!");
+            msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
+            alert("✅ Message sent successfully!");
 
-    form.reset();
+            form.reset();
 
         } catch (error) {
-        msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
-    console.error("Error:", error);
+            console.error("Error:", error);
+            msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
         }
 
-    btn.innerText = "Send Message";
-    btn.disabled = false;
+        btn.innerText = "Send Message";
+        btn.disabled = false;
     });
 
 });
 
 
-    // 📍 AUTO LOCATION FUNCTION
-    function getLocation() {
+// 📍 AUTO LOCATION FUNCTION (Global)
+function getLocation() {
     const locationInput = document.getElementById("location");
+
+    if (!locationInput) return;
 
     if (navigator.geolocation) {
         locationInput.value = "Fetching location...";
 
-    navigator.geolocation.getCurrentPosition(
-    async function(position) {
+        navigator.geolocation.getCurrentPosition(
+            async function (position) {
                 const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
+                const lon = position.coords.longitude;
 
-    try {
+                try {
                     const response = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
-    );
-    const data = await response.json();
+                        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+                    );
 
-    locationInput.value = data.display_name;
+                    const data = await response.json();
+                    locationInput.value = data.display_name;
+
                 } catch (error) {
-        locationInput.value = `Lat: ${lat}, Lon: ${lon}`;
+                    locationInput.value = `Lat: ${lat}, Lon: ${lon}`;
                 }
             },
-    function() {
-        locationInput.value = "Location access denied ❌";
+            function () {
+                locationInput.value = "Location access denied ❌";
             }
-    );
+        );
     } else {
-        locationInput.value = "Not supported ❌";
+        locationInput.value = "Geolocation not supported ❌";
     }
 }
-</script>
