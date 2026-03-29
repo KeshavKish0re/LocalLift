@@ -204,7 +204,6 @@
             </div>
         </div>
     </section>
-
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -216,17 +215,26 @@
 
                     <form class="contact-form" id="contactForm">
 
-                        <input id="name" class="form-control mb-3" type="text" placeholder="Your Name">
+                        <!-- Name -->
+                        <input id="name" class="form-control mb-3" type="text" placeholder="Your Name" required>
 
-                        <input id="email" class="form-control mb-3" type="email" placeholder="Your Email">
+                        <!-- Phone -->
+                        <input id="phone" class="form-control mb-3" type="tel" placeholder="Your Phone Number" required>
 
-                        <textarea id="message" class="form-control mb-3" rows="4"
-                            placeholder="Tell us about your website"></textarea>
+                        <!-- Location + Auto Button -->
+                        <div class="d-flex gap-2 mb-3">
+                            <input id="location" class="form-control" type="text" placeholder="Your Location" required>
+                            <button type="button" class="btn btn-outline-dark" onclick="getLocation()">📍</button>
+                        </div>
 
-                        <!-- ✅ Message Box -->
+                        <!-- Requirement -->
+                        <textarea id="requirement" class="form-control mb-3" rows="4"
+                            placeholder="Tell us your requirement" required></textarea>
+
+                        <!-- Message Box -->
                         <div id="formMessage" class="mb-3 text-center"></div>
 
-                        <!-- ✅ Button -->
+                        <!-- Button -->
                         <button type="submit" id="submitBtn" class="btn btn-dark w-100">
                             Send Message
                         </button>

@@ -1,69 +1,96 @@
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-    console.log("JS is running 🚀");
+        console.log("JS is running 🚀");
 
     const form = document.getElementById("contactForm");
     const btn = document.getElementById("submitBtn");
     const msg = document.getElementById("formMessage");
 
-    if (!form) {
-        console.error("Form not found ❌");
-        return;
-    }
-
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        console.log("Form submitted ✅");
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const location = document.getElementById("location").value.trim();
+    const requirement = document.getElementById("requirement").value.trim();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+    msg.innerHTML = "";
 
-        msg.innerHTML = "";
-
-        if (!name || !email || !message) {
-            msg.innerHTML = `<span style="color:red;">⚠ Fill all fields</span>`;
-            return;
+    if (!name || !phone || !location || !requirement) {
+        msg.innerHTML = `<span style="color:red;">⚠ Fill all fields</span>`;
+    return;
         }
 
-        btn.innerText = "Sending...";
-        btn.disabled = true;
+    btn.innerText = "Sending...";
+    btn.disabled = true;
 
-        try {
+    try {
             const response = await fetch("http://localhost:8080/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
+        method: "POST",
+    headers: {
+        "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
+    body: JSON.stringify({
+        name: name,
+    phone: phone,
+    location: location,
+    requirement: requirement
                 })
             });
 
-            // ✅ CHECK IF RESPONSE IS SUCCESS
-            if (!response.ok) {
+    if (!response.ok) {
                 throw new Error("Server error");
             }
 
-            const result = await response.text();
+    const result = await response.text();
 
-            msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
+    msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
+    alert("✅ Message sent successfully!");
 
-            // ✅ ALERT POPUP (you asked this)
-            alert("✅ Message sent successfully!");
-
-            form.reset();
+    form.reset();
 
         } catch (error) {
-            msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
-            console.error("Error:", error);
+        msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
+    console.error("Error:", error);
         }
 
-        btn.innerText = "Send Message";
-        btn.disabled = false;
+    btn.innerText = "Send Message";
+    btn.disabled = false;
     });
 
 });
+
+
+    // 📍 AUTO LOCATION FUNCTION
+    function getLocation() {
+    const locationInput = document.getElementById("location");
+
+    if (navigator.geolocation) {
+        locationInput.value = "Fetching location...";
+
+    navigator.geolocation.getCurrentPosition(
+    async function(position) {
+                const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    try {
+                    const response = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+    );
+    const data = await response.json();
+
+    locationInput.value = data.display_name;
+                } catch (error) {
+        locationInput.value = `Lat: ${lat}, Lon: ${lon}`;
+                }
+            },
+    function() {
+        locationInput.value = "Location access denied ❌";
+            }
+    );
+    } else {
+        locationInput.value = "Not supported ❌";
+    }
+}
+</script>
