@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const name = document.getElementById("name").value.trim();
         const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email")?.value.trim(); // ✅ NEW
         const location = document.getElementById("location").value.trim();
         const requirement = document.getElementById("requirement").value.trim();
 
@@ -27,7 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 🛡️ Validation
         if (!name || !phone || !location || !requirement) {
-            msg.innerHTML = `<span style="color:red;">⚠ Fill all fields</span>`;
+            msg.innerHTML = `<span style="color:red;">⚠ Fill all required fields</span>`;
+            return;
+        }
+
+        // Optional email validation
+        if (email && !email.includes("@")) {
+            msg.innerHTML = `<span style="color:red;">⚠ Invalid email</span>`;
             return;
         }
 
@@ -41,10 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    name,
-                    phone,
-                    location,
-                    requirement
+                    name: name,
+                    phone: phone,
+                    email: email || "", // ✅ send real email
+                    location: location,
+                    requirement: requirement
                 })
             });
 
