@@ -355,20 +355,46 @@ body {
     font-weight: bold;
 }
 
-/* SERVICES */
+/* ================= SERVICES CSS ================= */
 .service-card {
+    position: relative;
+    width: 300px;
     height: 300px;
     border-radius: 15px;
     overflow: hidden;
-    position: relative;
     background-size: cover;
-    transition: transform 0.3s ease;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Card scale effect on hover */
 .service-card:hover {
     transform: scale(1.05);
 }
 
+/* Overlay always visible */
+.service-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 1;
+    /* always visible */
+    transition: none;
+    /* hover transition removed */
+}
+
+/* Background images */
 .gym {
     background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
 }
@@ -381,17 +407,15 @@ body {
     background-image: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b");
 }
 
-/* OVERLAY */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
+/* Overlay text styling */
+.service-card .overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card .overlay p {
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 /* TEAM / FOUNDERS */
