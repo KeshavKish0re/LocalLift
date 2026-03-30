@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🧠 Form Submit Handler
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // 🔥 Stops page refresh
-
-        console.log("Form intercepted ✅");
+        e.preventDefault(); // stops page refresh
 
         const name = document.getElementById("name").value.trim();
         const phone = document.getElementById("phone").value.trim();
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // 📧 Email validation (only if provided)
+        // 📧 Email validation (if provided)
         if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             msg.innerHTML = `<span style="color:red;">⚠ Invalid email format</span>`;
             return;
@@ -42,11 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.disabled = true;
 
         // 🟢 WhatsApp integration
-        const whatsappNumber = "917439698978"; // Your number
+        const whatsappNumber = "917439698978"; // your number
         const whatsappMessage = `Hello!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ALocation: ${encodeURIComponent(location)}%0ARequirement: ${encodeURIComponent(requirement)}`;
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-        // Open WhatsApp in new tab
+        // Open WhatsApp in a new tab
         window.open(whatsappURL, "_blank");
 
         msg.innerHTML = `<span style="color:green;">✅ WhatsApp ready! Please send your message.</span>`;
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// 📍 AUTO LOCATION FUNCTION (Global)
+// 📍 AUTO LOCATION FUNCTION
 function getLocation() {
     const locationInput = document.getElementById("location");
 
@@ -75,7 +73,6 @@ function getLocation() {
                     const response = await fetch(
                         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
                     );
-
                     const data = await response.json();
                     locationInput.value = data.display_name;
 
