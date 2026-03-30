@@ -4,36 +4,48 @@ body {
     background: #f5f7fb;
 }
 
-/* ===== COLORFUL CONTACT STRIP ===== */
-.colorful-contact-strip {
+/* ===== TOP BAR ===== */
+.top-bar {
     background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9068, #f9d423);
-    color: #009c44;
-    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
     font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1100;
-    padding: 0.6rem 0;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
 }
 
-.colorful-contact-strip .contact-text {
-    font-size: 0.95rem;
-}
-
-.colorful-contact-strip .contact-item a {
-    color: #a70707;
+/* Links inside top bar */
+.top-bar a {
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+    font-weight: 700;
     transition: color 0.3s ease;
+    margin: 0 0.3rem;
 }
 
-.colorful-contact-strip .contact-item a:hover {
-    color: #0e0055;
+.top-bar a:hover {
+    color: #000;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 0.85rem;
+        padding: 0.45rem 0;
+    }
+
+    .top-bar a {
+        display: inline-block;
+        margin: 0 0.2rem;
+    }
 }
 
 /* RESPONSIVE */
