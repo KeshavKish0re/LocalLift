@@ -7,7 +7,7 @@ body {
 /* ===== COLORFUL CONTACT STRIP ===== */
 .colorful-contact-strip {
     background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9068, #f9d423);
-    color: #fff;
+    color: #009c44;
     font-weight: 500;
     font-size: 0.95rem;
     z-index: 1100;
@@ -23,7 +23,7 @@ body {
 }
 
 .colorful-contact-strip .contact-item a {
-    color: #fff;
+    color: #a70707;
     text-decoration: none;
     font-weight: 500;
     display: flex;
@@ -33,7 +33,7 @@ body {
 }
 
 .colorful-contact-strip .contact-item a:hover {
-    color: #000;
+    color: #0e0055;
 }
 
 /* RESPONSIVE */
