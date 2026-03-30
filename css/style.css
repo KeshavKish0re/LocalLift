@@ -162,31 +162,34 @@ h6 {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    background-size: cover;
 }
 
+/* Overlay hamesha visible, hover effect remove */
 .service-card .overlay {
     background: rgba(0, 0, 0, 0.6);
+    /* thoda transparent dark background */
     color: #fff;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 1;
-    /* hamesha visible */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* center text horizontally */
     text-align: center;
     padding: 20px;
-}
-
-/* Hover effect remove kar diya */
-.service-card:hover .overlay {
     opacity: 1;
-    /* ye chhod bhi sakte ho */
+    /* hamesha visible */
+    transition: none;
+    /* hover transition remove */
 }
 
+/* Hover wala rule remove kiya */
 /* ============ PORTFOLIO ============ */
 .portfolio .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
