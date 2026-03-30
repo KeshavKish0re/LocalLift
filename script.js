@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.disabled = true;
 
         try {
+            // ✅ Existing backend fetch
             const response = await fetch("http://localhost:8080/api/contact", {
                 method: "POST",
                 headers: {
@@ -50,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({
                     name: name,
                     phone: phone,
-                    email: email,              // ✅ real email
+                    email: email,
                     location: location,
-                    message: requirement       // ✅ FIXED (important)
+                    message: requirement
                 })
             });
 
@@ -64,6 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
             alert("✅ Message sent successfully!");
+
+            // 🟢 WhatsApp integration
+            const whatsappNumber = "917439698978"; // Your number
+            const whatsappMessage = `Hello!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ALocation: ${encodeURIComponent(location)}%0ARequirement: ${encodeURIComponent(requirement)}`;
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, "_blank");
 
             form.reset();
 
@@ -77,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
 
 // 📍 AUTO LOCATION FUNCTION (Global)
 function getLocation() {
