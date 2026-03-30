@@ -4,6 +4,58 @@ body {
     background: #f5f7fb;
 }
 
+/* ===== TOP CONTACT BAR ===== */
+.top-contact-bar {
+    background: linear-gradient(90deg, #111, #222);
+    color: #fff;
+    font-size: 0.9rem;
+    z-index: 1050;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #ffc107;
+}
+
+.top-contact-bar .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.top-contact-bar .contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.top-contact-bar .contact-icon {
+    background: #ffc107;
+    color: #111;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-contact-bar .contact-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.top-contact-bar .contact-link:hover {
+    color: #ffc107;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .top-contact-bar .container {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}
+
 /* LOGO */
 .logo-img {
     width: 120px;
