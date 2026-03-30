@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 🧠 Form Submit Handler
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault(); // 🔥 Stops page refresh
 
         console.log("Form intercepted ✅");
@@ -38,49 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        btn.innerText = "Sending...";
+        btn.innerText = "Opening WhatsApp...";
         btn.disabled = true;
 
-        try {
-            // ✅ Existing backend fetch
-            const response = await fetch("http://localhost:8080/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    location: location,
-                    message: requirement
-                })
-            });
+        // 🟢 WhatsApp integration
+        const whatsappNumber = "917439698978"; // Your number
+        const whatsappMessage = `Hello!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ALocation: ${encodeURIComponent(location)}%0ARequirement: ${encodeURIComponent(requirement)}`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-            if (!response.ok) {
-                throw new Error("Server error");
-            }
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, "_blank");
 
-            const result = await response.text();
-
-            msg.innerHTML = `<span style="color:green;">✅ ${result}</span>`;
-            alert("✅ Message sent successfully!");
-
-            // 🟢 WhatsApp integration
-            const whatsappNumber = "917439698978"; // Your number
-            const whatsappMessage = `Hello!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ALocation: ${encodeURIComponent(location)}%0ARequirement: ${encodeURIComponent(requirement)}`;
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-            // Open WhatsApp in new tab
-            window.open(whatsappURL, "_blank");
-
-            form.reset();
-
-        } catch (error) {
-            console.error("Error:", error);
-            msg.innerHTML = `<span style="color:red;">❌ Failed to send</span>`;
-        }
-
+        msg.innerHTML = `<span style="color:green;">✅ WhatsApp ready! Please send your message.</span>`;
+        form.reset();
         btn.innerText = "Send Message";
         btn.disabled = false;
     });
