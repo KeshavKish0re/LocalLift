@@ -68,12 +68,16 @@ body {
     }
 }
 
-/* LOGO */
+ /* LOGO */
 .logo-img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
+    margin-top: 20px; /* yahan se logo upar se thoda niche hoga */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* NAVBAR */
