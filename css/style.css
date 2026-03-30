@@ -4,48 +4,48 @@ body {
     background: #f5f7fb;
 }
 
-/* ===== TOP CONTACT BAR ===== */
-.top-contact-bar {
-    background: linear-gradient(90deg, #111, #222);
+/* ===== COLORFUL CONTACT STRIP ===== */
+.colorful-contact-strip {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9068, #f9d423);
     color: #fff;
-    font-size: 0.9rem;
-    z-index: 1050;
-    transition: all 0.3s ease;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid #ffc107;
-}
-
-.top-contact-bar .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.top-contact-bar .contact-item:hover {
-    transform: translateY(-2px);
-}
-
-.top-contact-bar .contact-icon {
-    background: #ffc107;
-    color: #111;
-    padding: 0.2rem 0.5rem;
-    border-radius: 6px;
+    font-weight: 500;
     font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 1100;
+    padding: 0.6rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-.top-contact-bar .contact-link {
+.colorful-contact-strip .contact-text {
+    font-size: 0.95rem;
+}
+
+.colorful-contact-strip .contact-item a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
     transition: color 0.3s ease;
 }
 
-.top-contact-bar .contact-link:hover {
-    color: #ffc107;
+.colorful-contact-strip .contact-item a:hover {
+    color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .colorful-contact-strip .container {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .colorful-contact-strip .contact-text {
+        text-align: center;
+    }
 }
 
 /* RESPONSIVE */
