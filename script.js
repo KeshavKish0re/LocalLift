@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // 🧠 Form Submit Handler
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // stops page refresh
+        e.preventDefault();
 
         const name = document.getElementById("name").value.trim();
         const phone = document.getElementById("phone").value.trim();
@@ -21,34 +20,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         msg.innerHTML = "";
 
-        // 🛡️ Validation
+        // Validation
         if (!name || !phone || !location || !requirement) {
             msg.innerHTML = `<span style="color:red;">⚠ Fill all required fields</span>`;
             return;
         }
 
-        // 📧 Email validation (optional)
         if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             msg.innerHTML = `<span style="color:red;">⚠ Invalid email format</span>`;
             return;
         }
 
-        // 🔥 Disable button temporarily
         btn.disabled = true;
         btn.innerText = "Opening WhatsApp...";
 
-        // 🟢 WhatsApp integration
-        const whatsappNumber = "917439698978"; // Your number
+        // Correct WhatsApp number with country code (India: 91)
+        const whatsappNumber = "917439698978";
         const whatsappMessage = `Hello!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ALocation: ${encodeURIComponent(location)}%0ARequirement: ${encodeURIComponent(requirement)}`;
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-        // Open WhatsApp in a new tab (or app on mobile)
+        // Open WhatsApp in new tab
         window.open(whatsappURL, "_blank");
 
-        // ✅ Show success message
         msg.innerHTML = `<span style="color:green;">✅ WhatsApp ready! Please send your message.</span>`;
 
-        // Reset form and button
         form.reset();
         btn.disabled = false;
         btn.innerText = "Send Message";
