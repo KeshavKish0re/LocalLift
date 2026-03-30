@@ -407,6 +407,17 @@ body {
     background-image: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b");
 }
 
+.services-title {
+    font-size: 3rem;
+    /* big letters */
+    font-weight: 800;
+    /* bold */
+    color: #0d6efd;
+    /* accent color, change as needed */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 /* Overlay text styling */
 .service-card .overlay h3 {
     font-size: 1.5rem;
