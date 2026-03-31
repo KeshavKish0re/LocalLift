@@ -4,42 +4,6 @@ body {
     background: #f5f7fb;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-.hover-card {
-  transition: all 0.3s ease;
-}
-
-.hover-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.btn {
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-.custom-navbar {
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-.service-card {
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-
-.service-card:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-
 /* ===== TOP BAR ===== */
 .top-bar {
     background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9068, #f9d423);

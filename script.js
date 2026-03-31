@@ -79,4 +79,3 @@ function getLocation() {
         locationInput.value = "Geolocation not supported ❌";
     }
 }
-
