@@ -4,7 +4,7 @@ body {
     background: #f5f7fb;
     line-height: 1.6;
     color: #333;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.6s ease;
     padding-top: 100px;
     /* top bar + navbar */
