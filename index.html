@@ -2,91 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
-    <!-- SEO -->
     <meta name="description"
-        content="LocalLift Technologies is a website development company in Kolkata offering modern, fast and affordable websites. We help businesses go online.">
+        content="LocalLift is a website development company in Kolkata offering modern, fast and affordable websites for businesses. Get your business online today.">
 
     <meta name="keywords"
-        content="LocalLift Technologies, LocalLift Kolkata, website development company Kolkata, web design Kolkata, affordable website India, startup website development, SEO friendly websites Kolkata">
+        content="website development company Kolkata, website making, LocalLift Technologies,web design Kolkata, affordable website development India, business website services">
 
-    <!-- MOBILE RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LocalLift Technologies is a website development company in Kolkata offering modern, fast and affordable websites. We help businesses go online with professional web design and development services.">
+
+    <meta name="keywords" content="
+LocalLift Technologies,
+LocalLift Kolkata,
+website development company Kolkata,
+web design company Kolkata,
+website developer Kolkata,
+affordable website development India,
+business website services,
+startup website development,
+SEO friendly websites Kolkata
+">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>LocalLift Technologies</title>
 
-    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="./css/style.css">
-
-    <!-- SCROLL REVEAL -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <style>
-        /* EXTRA MOBILE FIXES (no removal, only enhancement) */
-        @media (max-width: 768px) {
-            .logo-img {
-                width: 70px;
-                height: 70px;
-                margin-top: 10px;
-            }
-
-            .navbar-brand span {
-                font-size: 1rem !important;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
-            }
-
-            .hero h3 {
-                font-size: 1rem;
-            }
-
-            .service-card {
-                width: 90% !important;
-                height: 220px !important;
-            }
-
-            .about-card {
-                margin-bottom: 20px;
-            }
-
-            .team-section .card img {
-                width: 100px;
-                height: 100px;
-            }
-
-            body {
-                padding-top: 120px;
-            }
-        }
-    </style>
 
 </head>
 
-<body>
+<script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- TOP BAR -->
+<script>
+ScrollReveal().reveal('.section-title', {
+    delay: 200,
+    distance: '40px',
+    origin: 'bottom',
+    duration: 800,
+    easing: 'ease-in-out',
+    reset: false
+});
+
+ScrollReveal().reveal('.service-card, .card, .about-card', {
+    delay: 300,
+    distance: '60px',
+    origin: 'bottom',
+    duration: 900,
+    interval: 200,
+    easing: 'ease-in-out'
+});
+</script>
+
+<body>
+    <!-- TOP NOTIFICATION BAR -->
     <div class="top-bar">
         🚀 Contact Us:
         <a href="tel:+917439698978">📞 +91 7439698978</a> |
-        <a href="tel:+918539055424">📞 +91 8539055424</a>
+        <a href="tel:+918539055424">📞 +91 8539055424</a> |
     </div>
-
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar shadow">
         <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
                 <img src="./images/logo.png" alt="LLT Logo" class="logo-img">
                 <span class="fw-bold fs-4">LocalLift Technologies</span>
             </a>
@@ -106,24 +90,24 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero text-white d-flex align-items-center">
-        <div class="container text-center">
+        <div class="container text-center hero-content">
 
             <h1 class="display-3 fw-bold">LocalLift Technologies</h1>
             <h2 class="mt-3">Websites That Grow Your Business</h2>
-            <h3 class="mt-3">
+            <h3 class="mt-3" style="color: #fbfbfb;">
                 Professional websites for gyms, schools and local businesses
             </h3>
 
-            <a href="#contact" class="btn btn-warning btn-lg mt-4">
+            <a href="#contact" class="btn btn-warning btn-lg hero-btn mt-4">
                 Get Your Website
             </a>
 
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT US -->
     <section id="about" class="about-section py-5">
         <div class="container">
             <h2 class="section-title text-center mb-5">About Us</h2>
@@ -131,6 +115,8 @@
             <p class="text-center lead mb-5">
                 At <strong>LocalLift Technologies</strong>, we build modern websites and apps that help local businesses
                 thrive online.
+                From gyms and schools to startups and shops, our goal is to deliver solutions that are fast,
+                mobile-friendly, and visually engaging.
             </p>
 
             <div class="row g-4 justify-content-center">
@@ -138,14 +124,20 @@
                 <div class="col-md-5">
                     <div class="about-card p-4 shadow-sm rounded hover-card">
                         <h5><i class="bi bi-bullseye"></i> Our Mission</h5>
-                        <p>Empower small businesses with digital solutions.</p>
+                        <p class="mb-0">
+                            Empower small businesses with professional digital solutions, helping them reach more
+                            customers, streamline operations, and grow efficiently in the digital age.
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-md-5">
                     <div class="about-card p-4 shadow-sm rounded hover-card">
                         <h5><i class="bi bi-eye"></i> Our Vision</h5>
-                        <p>Be the go-to tech partner for local businesses.</p>
+                        <p class="mb-0">
+                            To be the go-to technology partner for local businesses, providing innovative, reliable, and
+                            affordable web and app solutions that make a real impact.
+                        </p>
                     </div>
                 </div>
 
@@ -153,35 +145,36 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services-section py-5">
-        <div class="container text-center mb-4">
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="services-section" style="padding: 80px 0; background: #f9fafb;">
+        <div class="container" style="text-align: center; margin-bottom: 40px;">
             <h1 class="services-title">Our Services</h1>
         </div>
 
-        <div class="container d-flex flex-wrap justify-content-center gap-4">
-
+        <div class="container" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+            <!-- GYM CARD -->
             <div class="service-card gym">
                 <div class="overlay">
                     <h3>Gym Website</h3>
-                    <p>Classes, schedules, memberships.</p>
+                    <p>Professional gym website with classes, schedules, and membership options.</p>
                 </div>
             </div>
 
+            <!-- SCHOOL CARD -->
             <div class="service-card school">
                 <div class="overlay">
                     <h3>School Website</h3>
-                    <p>Courses, events, portal.</p>
+                    <p>Modern school website with courses, events, and student portal.</p>
                 </div>
             </div>
 
+            <!-- BUSINESS CARD -->
             <div class="service-card business">
                 <div class="overlay">
                     <h3>Business Website</h3>
-                    <p>Corporate & portfolio websites.</p>
+                    <p>Corporate website for businesses with services and portfolio showcase.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -189,84 +182,115 @@
     <section id="portfolio" class="portfolio text-center py-5">
         <div class="container">
             <h2 class="section-title mb-4">Our Work</h2>
+            <p class="mb-5">Fast, modern, and mobile-friendly websites for local businesses.</p>
 
             <div class="row g-4">
+
                 <div class="col-md-4">
                     <div class="card shadow-sm hover-card">
-                        <img src="./images/websitegyan.png" class="card-img-top">
+                        <img src="./images/websitegyan.png" class="card-img-top" alt="Website 1">
                         <div class="card-body">
-                            <h5>GyanVriksh Academy</h5>
-                            <a href="https://www.gyanvrikshacademy.in" target="_blank" class="btn btn-primary">Visit</a>
+                            <h5 class="card-title">GyanVriksh Academy Website</h5>
+                            <p class="card-text">A fully responsive Academy website with online booking and Academic
+                                Features.</p>
+                            <a href="https://www.gyanvrikshacademy.in" target="_blank" class="btn btn-primary">Visit
+                                Site</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
-    <!-- TEAM -->
+    <!-- TEAM / FOUNDERS -->
     <section id="team" class="team-section py-5 bg-light">
-        <div class="container text-center">
-
-            <h2 class="section-title mb-5">Meet Our Team</h2>
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Meet Our Team</h2>
 
             <div class="row justify-content-center g-4">
 
-                <div class="col-md-4">
+                <div class="col-md-4 text-center">
                     <div class="card border-0 hover-card">
-                        <img src="./images/keshav.png" class="rounded-circle mx-auto mt-3">
+                        <img src="./images/keshav.png" class="rounded-circle mx-auto mt-3" alt="Founder">
                         <div class="card-body">
-                            <h5>Keshav Kishore</h5>
-                            <p>Founder & CEO</p>
+                            <h5 class="card-title">Keshav Kishore</h5>
+                            <p class="text-muted">Founder & CEO</p>
+                            <p>Passionate about creating websites that help local businesses grow online.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 text-center">
                     <div class="card border-0 hover-card">
-                        <img src="./images/jatan new.jpeg" class="rounded-circle mx-auto mt-3">
+                        <img src="./images/jatan new.jpeg" class="rounded-circle mx-auto mt-3" alt="Co-Founder">
                         <div class="card-body">
-                            <h5>Jatan Kumar</h5>
-                            <p>Co-Founder & CTO</p>
+                            <h5 class="card-title">Jatan Kumar</h5>
+                            <p class="text-muted">Co-Founder & CTO</p>
+                            <p>Expert in web development and app solutions, turning ideas into digital reality.</p>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact-section py-5">
+        <div class="container">
+
+            <h2 class="text-center section-title mb-5">Contact Us</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+
+                    <form class="contact-form" id="contactForm">
+
+                        <input id="name" class="form-control mb-3" type="text" placeholder="Your Name" required>
+                        <input id="email" class="form-control mb-3" type="email" placeholder="Your Email (Gmail)"
+                            required>
+                        <input id="phone" class="form-control mb-3" type="tel" placeholder="Your Phone Number" required>
+
+                        <div class="d-flex gap-2 mb-3">
+                            <input id="location" class="form-control" type="text" placeholder="Your Location" required>
+                            <button type="button" class="btn btn-outline-dark" onclick="getLocation()">📍</button>
+                        </div>
+
+                        <textarea id="requirement" class="form-control mb-3" rows="4"
+                            placeholder="Tell us your requirement" required></textarea>
+
+                        <div id="formMessage" class="mb-3 text-center"></div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-dark w-100">
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ADDRESS -->
+    <section id="address" class="address-section py-5 bg-light">
         <div class="container text-center">
-
-            <h2 class="section-title mb-5">Contact Us</h2>
-
-            <form id="contactForm" class="contact-form mx-auto" style="max-width:500px;">
-                <input class="form-control mb-3" placeholder="Name" required>
-                <input class="form-control mb-3" placeholder="Email" required>
-                <input class="form-control mb-3" placeholder="Phone" required>
-                <textarea class="form-control mb-3" rows="4" placeholder="Requirement"></textarea>
-                <button class="btn btn-dark w-100">Send Message</button>
-            </form>
-
+            <h2 class="section-title mb-4">Our Address</h2>
+            <p>🏢 LocalLift Technologies</p>
+            <p>Gopal Kunjo, School Road, Sodepur,Kolkata-700110, West Bengal, India</p>
+            <p>📞 +91 7439698978 | +91 8539055424 | ✉ locallifttech@gmail.com</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer text-center py-4">
         <p>© 2026 LocalLift Technologies</p>
+        <p>Building powerful websites & Apps for local businesses</p>
     </footer>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        ScrollReveal().reveal('.section-title', { delay: 200, distance: '40px', origin: 'bottom' });
-        ScrollReveal().reveal('.service-card, .card, .about-card', { delay: 300, interval: 200 });
-    </script>
+    <script src="./script.js"></script>
 
 </body>
 
