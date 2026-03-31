@@ -1,10 +1,83 @@
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f5f7fb;
+    line-height: 1.6;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    padding-top: 100px;
+    /* top bar + navbar */
 }
 
-/* ===== TOP BAR ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= SMOOTH INTERACTIONS ================= */
+.hover-card {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ================= NAVBAR ================= */
+.custom-navbar {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar.custom-navbar {
+    padding: 0.8rem 1rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.2rem !important;
+    margin-left: 1rem;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffc107 !important;
+    transform: scale(1.08);
+}
+
+.navbar-nav .nav-item+.nav-item {
+    margin-left: 1.5rem !important;
+}
+
+/* ================= LOGO ================= */
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
+}
+
+/* ================= TOP BAR ================= */
 .top-bar {
     background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9068, #f9d423);
     color: #fff;
@@ -14,348 +87,64 @@ body {
     padding: 0.5rem 0;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1100;
-    letter-spacing: 0.5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
 }
 
-/* Links inside top bar */
 .top-bar a {
     color: #fff;
-    text-decoration: none;
     font-weight: 700;
-    transition: color 0.3s ease;
     margin: 0 0.3rem;
+    transition: color 0.3s ease;
 }
 
 .top-bar a:hover {
     color: #000;
 }
 
-/* Responsive for smaller devices */
-@media (max-width: 768px) {
-    .top-bar {
-        font-size: 0.85rem;
-        padding: 0.45rem 0;
-    }
-
-    .top-bar a {
-        display: inline-block;
-        margin: 0 0.2rem;
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .colorful-contact-strip .container {
-        flex-direction: column;
-        gap: 0.4rem;
-    }
-
-    .colorful-contact-strip .contact-text {
-        text-align: center;
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .top-contact-bar .container {
-        flex-direction: column;
-        gap: 0.3rem;
-    }
-}
-
-/* LOGO */
-.logo-img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-top: 20px;
-    /* yahan se logo upar se thoda niche hoga */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* NAVBAR */
-.custom-navbar {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-}
-
-#formMessage {
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-/* ============ GENERAL STYLES ============ */
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    scroll-behavior: smooth;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 600;
-}
-
-/* ============ TOP BAR ============ */
-.top-contact-bar {
-    z-index: 1050;
-    font-size: 0.9rem;
-}
-
-/* ============ NAVBAR ============ */
-.navbar.custom-navbar {
-    background: #111;
-    padding: 0.8rem 1rem;
-    transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link {
-    color: #fff;
-    margin-left: 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: #ffc107;
-    transform: translateY(-2px);
-}
-
-/* ============ HERO ============ */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 150px 0 100px;
-    text-align: center;
-}
-
-.hero .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* ============ ABOUT US ============ */
-.about-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ============ SERVICES ============ */
-.service-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 15px;
-    background-size: cover;
-}
-
-/* Overlay hamesha visible, hover effect remove */
-.service-card .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    /* thoda transparent dark background */
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* center text horizontally */
-    text-align: center;
-    padding: 20px;
-    opacity: 1;
-    /* hamesha visible */
-    transition: none;
-    /* hover transition remove */
-}
-
-/* Hover wala rule remove kiya */
-/* ============ PORTFOLIO ============ */
-.portfolio .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* ============ TEAM ============ */
-.team-section .card img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.team-section .card img:hover {
-    transform: scale(1.05);
-}
-
-/* ============ CONTACT FORM ============ */
-.contact-section .form-control {
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.contact-section .form-control:focus {
-    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
-    border-color: #ffc107;
-    transform: translateY(-1px);
-}
-
-.contact-section button.btn-dark:hover {
-    transform: translateY(-2px);
-    background-color: #222;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ============ FOOTER ============ */
-.footer {
-    background: #111;
-    color: #fff;
-}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 768px) {
-    .hero {
-        padding: 120px 1rem 80px;
-    }
-
-    .navbar-nav .nav-link {
-        margin-left: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .about-card,
-    .service-card,
-    .portfolio .card,
-    .team-section .card {
-        margin-bottom: 1.5rem;
-    }
-}
-
-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-body {
-    padding-top: 100px;
-    /* top bar + navbar height */
-}
-
-/* Navbar link style */
-.navbar-nav .nav-link {
-    font-size: 1.5rem !important;
-    /* bigger font */
-    font-weight: 600 !important;
-    /* bolder */
-    padding: 1rem 1.2rem !important;
-    /* bigger clickable area */
-    transition: all 0.3s ease;
-}
-
-/* Navbar hover effect */
-.navbar-nav .nav-link:hover {
-    color: #ffc107 !important;
-    transform: scale(1.1);
-    /* subtle grow effect */
-}
-
-/* Spacing between links */
-.navbar-nav .nav-item+.nav-item {
-    margin-left: 1.5rem !important;
-}
-
-/* HERO */
+/* ================= HERO ================= */
 .hero {
     height: 100vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    color: white;
     text-align: center;
+    color: white;
 }
 
-/* HERO BUTTON */
 .hero-btn {
     font-size: 1.3rem;
     font-weight: 600;
     padding: 0.8rem 2rem;
-    transition: all 0.3s ease;
 }
 
-/* ABOUT US SECTION */
+/* ================= ABOUT ================= */
 .about-section {
     background: #f9fafb;
-    /* subtle professional background */
 }
 
-.about-section .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #0d6efd;
-    /* accent color */
-    letter-spacing: 1px;
-}
-
-.about-section .lead {
-    font-size: 1.1rem;
-    color: #444;
-}
-
-.about-card {
-    background: #fff;
-    border-left: 5px solid #0d6efd;
-    /* accent color for professional look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.about-card h5 {
-    font-weight: 600;
-    color: #0d6efd;
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.about-card p {
-    color: #555;
-    line-height: 1.6;
-}
-
-/* TITLES */
 .section-title {
     font-size: 36px;
     font-weight: bold;
 }
 
-/* ================= SERVICES CSS ================= */
+.about-card {
+    background: #fff;
+    border-left: 5px solid #0d6efd;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= SERVICES ================= */
 .service-card {
     position: relative;
     width: 300px;
@@ -365,33 +154,24 @@ body {
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-/* Card scale effect on hover */
 .service-card:hover {
     transform: scale(1.05);
+    filter: brightness(1.05);
 }
 
-/* Overlay always visible */
 .service-card .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
-    opacity: 1;
-    /* always visible */
-    transition: none;
-    /* hover transition removed */
 }
 
 /* Background images */
@@ -407,51 +187,81 @@ body {
     background-image: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b");
 }
 
-.services-title {
-    font-size: 2rem;
-    /* big letters */
-    font-weight: 600;
-    /* bold */
-    color: #040404;
-    /* accent color, change as needed */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* Overlay text styling */
-.service-card .overlay h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.service-card .overlay p {
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-/* TEAM / FOUNDERS */
+/* ================= TEAM ================= */
 .team-section .card img {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.team-section .card-body p {
-    font-size: 0.9rem;
-    color: #555;
+.team-section .card img:hover {
+    transform: scale(1.05);
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-form {
     background: white;
     padding: 30px;
     border-radius: 10px;
 }
 
-/* FOOTER */
+.contact-section .form-control:focus {
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+    border-color: #ffc107;
+}
+
+/* ================= FOOTER ================= */
 .footer {
     background: #111;
     color: #aaa;
     padding: 30px;
+}
+
+/* ================= UTILITIES ================= */
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #ffc107;
+    width: 0%;
+    z-index: 9999;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    touch-action: manipulation;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 120px 20px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem !important;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+
+    .logo-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .top-bar {
+        font-size: 0.85rem;
+    }
 }
